@@ -1,0 +1,123 @@
+
+Tue Nov 28 11:18:47 CET 2017:
+11:25:56: A new client has connected.
+11:25:59: A new client has connected.
+11:26:01: User >Jonatan< joined from localhost
+11:26:02: User >Jonatan< wrote: Hallo
+11:26:05: User >Lukas< joined on IP /10.7.13.12
+11:26:08: User >Lukas< wrote: Haloo
+11:26:09: User >Lukas< wrote: Hi
+11:26:13: User >Lukas< wrote: Hr. St�ber
+11:26:48: User >Jonatan< left.
+
+Thu Nov 30 13:51:42 CET 2017:
+13:51:54: A new client has connected.
+13:51:58: User >Jonatan< joined from localhost
+13:51:59: User >Jonatan< wrote: Bob
+13:52:00: User >Jonatan< wrote: This
+13:52:00: User >Jonatan< wrote: is
+13:52:01: User >Jonatan< wrote: Karl
+13:52:03: User >Jonatan< left.
+
+Thu Nov 30 14:08:17 CET 2017:
+14:08:19: A new client has connected.
+14:08:22: User >Jonatan< joined from localhost
+14:08:23: User >Jonatan< wrote: Test
+14:08:31: User >Jonatan< left.
+
+Thu Nov 30 14:21:18 CET 2017:
+14:21:27: A new client has connected.
+14:21:30: User >Jonatan< joined from localhost
+14:21:44: A new client has connected.
+14:21:47: User >Bob< joined from localhost
+14:21:50: User >Bob< wrote: /kick Jonatan
+14:21:53: User >Bob< wrote: #
+14:21:59: User >Bob< wrote: /kick Jonatan
+
+Thu Nov 30 14:23:48 CET 2017:
+14:23:50: A new client has connected.
+14:23:52: User >Jonatan< joined from localhost
+14:23:54: A new client has connected.
+14:23:56: User >Bob< joined from localhost
+14:23:58: User >Bob< wrote: [Ljava.lang.String;@5dd73fe6
+14:24:04: User >Jonatan< wrote: [Ljava.lang.String;@30a5bc37
+14:24:05: User >Jonatan< wrote: [Ljava.lang.String;@5d811251
+14:24:05: User >Jonatan< wrote: [Ljava.lang.String;@4a95117e
+14:24:18: User >Jonatan< wrote: [Ljava.lang.String;@5172afa2
+
+Thu Nov 30 14:24:30 CET 2017:
+14:24:32: A new client has connected.
+14:24:34: User >Joantan< joined from localhost
+14:24:38: A new client has connected.
+14:24:40: User >Bob< joined from localhost
+14:24:42: User >Bob< wrote: [Ljava.lang.String;@62baec78
+14:24:53: User >Bob< wrote: [Ljava.lang.String;@6c7d1e5f
+
+Thu Nov 30 14:26:15 CET 2017:
+14:26:17: A new client has connected.
+14:26:19: User >Jonatan< joined from localhost
+14:26:22: User >Jonatan< wrote: Hi
+14:26:24: A new client has connected.
+14:26:26: User >Bob< joined from localhost
+14:26:28: User >Bob< was kicked by Bob
+14:26:28: User >Jonatan< left.
+
+Thu Nov 30 14:28:09 CET 2017:
+14:28:11: A new client has connected.
+14:28:13: User >Jonatan< joined from localhost
+14:28:29: A new client has connected.
+14:28:31: User >Bob< joined from localhost
+14:28:32: User >Bob< wrote: Hi
+14:28:33: User >Bob< wrote: Ich
+14:28:34: User >Bob< wrote: Hasse
+14:28:35: User >Bob< wrote: Dich
+14:28:36: User >Bob< was kicked by Bob
+14:28:36: User >Jonatan< left.
+
+Thu Nov 30 14:31:50 CET 2017:
+14:32:04: A new client has connected.
+14:32:08: User >Jonatan< joined from localhost
+14:32:11: A new client has connected.
+14:32:12: User >Bob< joined from localhost
+14:32:22: User >Jonatan< was kicked by Jonatan
+14:32:22: User >Jonatan< left.
+
+Thu Nov 30 14:36:22 CET 2017:
+14:36:25: A new client has connected.
+14:36:27: User >Jonatan< joined from localhost
+14:36:30: A new client has connected.
+14:36:31: User >Bob< joined from localhost
+14:36:35: User >Bob< wrote: Krümel :D
+14:36:37: Bob tried to kick Jonatan without permission!
+14:36:42: User >Bob< wrote: Fuuuuuck!!!!
+14:36:45: User >Jonatan< wrote: ???
+14:36:47: User >Bob< was kicked by Jonatan
+14:36:47: User >Bob< left.
+14:36:50: User >Jonatan< left.
+
+Thu Nov 30 14:54:58 CET 2017:
+14:55:01: A new client has connected.
+14:55:04: User >Jonatan< joined from localhost
+14:55:15: A new client has connected.
+14:55:18: User >Bob< joined from localhost
+14:55:28: User >Jonatan< wrote: ggh
+14:55:32: User >Bob< wrote: Hi
+14:55:40: >Bob< tried to kick >Jonatan< without permission!
+14:55:53: User >Bob< was kicked by Jonatan
+14:55:53: User >Bob< left.
+14:56:02: User >Jonatan< left.
+
+Thu Nov 30 15:03:43 CET 2017:
+15:03:49: A new client has connected.
+15:03:52: User >Jonatan< joined from localhost
+15:03:54: A new client has connected.
+15:03:56: User >Bob< joined from localhost
+15:03:59: >Bob< tried to kick >Jonatan< without permission!
+15:04:03: User >Bob< was banned by Jonatan
+15:04:03: User >Bob< left.
+
+Fri Dec 01 12:44:29 CET 2017:
+12:44:46: A new client has connected.
+12:44:49: User >Jonatan< joined from localhost
+12:44:51: User >Jonatan< wrote: Test
+12:44:54: User >Jonatan< was kicked by Jonatan
