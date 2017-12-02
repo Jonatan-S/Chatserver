@@ -121,3 +121,51 @@ Fri Dec 01 12:44:29 CET 2017:
 12:44:49: User >Jonatan< joined from localhost
 12:44:51: User >Jonatan< wrote: Test
 12:44:54: User >Jonatan< was kicked by Jonatan
+
+Sat Dec 02 00:54:24 CET 2017:
+00:54:43: A new client has connected.
+00:54:48: User >Lukas< joined from localhost
+00:55:13: User >Lukas< left.
+
+Sat Dec 02 01:07:22 CET 2017:
+01:07:25: A new client has connected.
+01:07:38: User >Lukas< joined from localhost
+01:07:48: >Lukas< tried to ban >Bob<, but there was no such user.
+01:08:15: User >Lukas< wrote: hi
+01:08:27: User >Lukas< was banned by Lukas
+
+Sat Dec 02 01:20:00 CET 2017:
+01:20:07: A new client has connected.
+01:20:13: User >Lukas< joined from localhost
+01:20:30: User >Lukas< wrote: HI
+01:20:50: User >Lukas< wrote: 
+01:20:50: User >Lukas< wrote: ^C
+01:20:51: User >Lukas< wrote: 
+01:20:51: User >Lukas< wrote: ^C
+01:21:03: User >Lukas< wrote: d
+01:21:08: User >Lukas< left.
+
+Sat Dec 02 01:42:42 CET 2017:
+01:42:46: A new client has connected.
+01:42:51: User >Lukas< joined from localhost
+01:43:10: User >Lukas< left.
+
+Sat Dec 02 01:45:10 CET 2017:
+01:45:15: A new client has connected.
+01:45:19: User >Lukas< joined from localhost
+01:45:27: User >Lukas< wrote: Kick Bob
+01:45:34: >Lukas< tried to kick >bob< without permission!
+01:45:56: >Lukas< tried to change the rank of >Lukas< without permission!
+01:46:01: User >Lukas< left.
+
+Sat Dec 02 01:52:53 CET 2017:
+01:52:58: A new client has connected.
+01:53:01: User >Lukas< joined from localhost
+01:53:49: >Lukas< tried to change the rank of >Lukas< without permission!
+01:53:53: User >Lukas< wrote: Hi
+01:53:56: User >Lukas< left.
+
+Sat Dec 02 02:00:43 CET 2017:
+02:00:46: A new client has connected.
+02:00:49: User >Lukas< joined from localhost
+02:01:11: User >Lukas< left.

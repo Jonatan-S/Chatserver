@@ -21,16 +21,17 @@ public class Logger
     {
         datum = new Date().toString();
         
-        //Schreibt, falls die Log-Datei bereits besteht, hinter den vorherigen Eintrag.
+        //Schreibt, falls die Log-Datei bereits besteht, hinter den vorherigen Eintrag
         fw = new FileWriter("Log.txt", true);
         bw = new BufferedWriter(fw);
         
         //Überschrift des Logs erstellen
         bw.newLine();              
         bw.write(datum + ":");
+        System.out.println(datum + ": Server wurde gestartet.");
         bw.newLine();
         
-        //Speichert die Daten in der Datei ab, wenn der Thread beendet wird.
+        //Speichert die Daten in der Datei ab, wenn der Thread beendet wird
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() 
         {
            public void run() {

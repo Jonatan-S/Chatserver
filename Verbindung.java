@@ -58,7 +58,7 @@ public class Verbindung extends Thread
                 pr.println("Username: ");
                 name = br.readLine().trim();
 
-                //Logt den beigetretenen Nutzer mit IP Adresse
+                //Loggt den beigetretenen Nutzer mit IP Adresse
                 InetAddress inet = clientSocket.getInetAddress();
                 if(inet.toString().equals(clientSocket.getLocalAddress().toString())) {
                     log.addToLog("User >" + name + "< joined from localhost");
@@ -77,12 +77,19 @@ public class Verbindung extends Thread
                 //Alle Chatmitglieder benachrichtigen
                 chat.writeAll(name + " entered.");
 
-                //Info zu Befehlen und aktuellen Nutzern
+                //Info zu Befehlen und aktuellen Nutzern                               
+                /** Es fehlt noch /help und /rank im Schwitz Case :D */
+                pr.println("/HELP To see a list of all commands.");
                 pr.println("/LEAVE To leave the chat.");
                 pr.println("/USERS To list all current chatroomusers.");
-                pr.println("/KICK USERNAME To kick the specified user from the server. (You have to be Admin or Moderator to do this)");
-                pr.println("/BAN  USERNAME  To ban the specified user from the server. (You have to be Admin to do this.)");
-                pr.println("/CHANGERANK USERNAME NEWRANK To change the rank of the user you specified. (You have to be Admin to do this.)");
+                pr.println("/RANK To see your current rank.");
+                pr.println("");
+                pr.println("Commands for Admins or Moderators:");
+                pr.println("/KICK USERNAME To kick the specified user from the server. (Admin or Moderator)");
+                pr.println("/BAN  USERNAME  To ban the specified user from the server. (Admin)");
+                pr.println("/CHANGERANK USERNAME NEWRANK To change the rank of the user you specified. (Admin)");
+                pr.println("");
+                pr.println("Your current rank: " + user.getRank());
                 pr.println("Current chatroomusers: " + chat.list());
 
                 while(true)
@@ -101,40 +108,85 @@ public class Verbindung extends Thread
                             pr.println("Current chatroomusers: " + chat.list());
                             break;
                         case "/kick":
-                            kick(chat.getUser(inputLines[1]),"kicked");
+                            //Nutzer will einen Chatroomuser vom Server kicken
+                            User tmpU1 = chat.getUser(inputLines[1]);
+                            if (user.getRank() != Rank.ADMIN || user.getRank() != Rank.MODERATOR){
+                                pr.println("Only Admins and Moderators are allowed to kick!");
+                                log.addToLog(">" + name + "< tried to kick >" + inputLines[1] + "< without permission!");
+                            }
+                            else{
+                                if (tmpU1 == null){
+                                    pr.println("This user doesn't exist!");
+                                    log.addToLog(">" + name + "< tried to kick >" + inputLines[1] + "<, but there was no such user.");
+                                }
+                                else
+                                {
+                                    kick(tmpU1,"kicked");
+                                }
+                            }
                             break;
                         case "/ban":
-                            /** Abfangen falls falscher Nutzer eingegeben wurde. (Noch zu erledigen)*/
-                            User tmpU = chat.getUser(inputLines[1]);
-                            if(user.getRank() == Rank.ADMIN) {
-                                bl.add(tmpU);
-                                kick(tmpU,"banned");
-                            } else {
-                                pr.println("Only Admins and Moderators are allowed to ban!");
-                                log.addToLog(">" + name + "< tried to ban >" + tmpU.getName() + "< without permission!");
+                            //Nutzer will einen Chatroomuser vom Server bannen
+                            User tmpU2 = chat.getUser(inputLines[1]);
+                            //Prüfen, ob der ausführende Nutzer genügend Rechte bestitzt
+                            if (user.getRank() == Rank.ADMIN){
+                                pr.println("Only Admins are allowed to ban!");
+                                log.addToLog(">" + name + "< tried to ban >" + inputLines[1] + "< without permission!");
+                            }
+                            else
+                            {
+                                //Wenn dies der falls ist wird über prüft, ob der angegebene Nutzer existiert, ob der ausführende Nutzer hat
+                                if(tmpU2 != null) {
+                                    bl.add(tmpU2);
+                                    kick(tmpU2,"banned");
+                                } 
+                                else
+                                {
+                                  pr.println("This user doesn't exist!");
+                                  log.addToLog(">" + name + "< tried to ban >" + inputLines[1] + "<, but there was no such user.");  
+                                }
                             }
                             break;
                         case "/changerank":
-                            /** Abfangen falls falscher Nutzer eingegeben wurde. (Noch zu erledigen)*/
-                            User tmpU2 = chat.getUser(inputLines[1]);
-                            String tmpR = inputLines[2].toUpperCase();
-                            switch (tmpR){
-                                case "ADMIN":
-                                    tmpU2.setRank(Rank.ADMIN);
-                                    break;
-                                case "MODERATOR":
-                                    tmpU2.setRank(Rank.MODERATOR);
-                                    break;
-                                case "GUEST":
-                                    tmpU2.setRank(Rank.GUEST);
-                                    break;
+                            //Nutzer will den Rang eines Chatroomuser ändern.
+                            User tmpU3 = chat.getUser(inputLines[1]);
+                            if (user.getRank() != Rank.ADMIN){
+                                pr.println("Only Admins are allowed to change ranks!");
+                                log.addToLog(">" + name + "< tried to change the rank of >" + inputLines[1] + "< without permission!");
+                            }
+                            else
+                            {
+                                if(tmpU3 != null) 
+                                {
+                                    String tmpR = inputLines[2].toUpperCase();
+                                    switch (tmpR){
+                                        case "ADMIN":
+                                            tmpU3.setRank(Rank.ADMIN);
+                                            tmpU3.getPrintWriter().println("You are now ADMIN. (Changed by " +name+")");
+                                            break;
+                                        case "MODERATOR":
+                                            tmpU3.setRank(Rank.MODERATOR);
+                                            tmpU3.getPrintWriter().println("You are now MODERATOR. (Changed by " +name+")");
+                                            break;
+                                        case "GUEST":
+                                            tmpU3.setRank(Rank.GUEST);
+                                            tmpU3.getPrintWriter().println("You are now GUEST. (Changed by " +name+")");
+                                            break;
+                                    }
+                                    pr.println("You have successfully changed the rank of " +tmpU3.getName()+ " to " +tmpR+ ".");
+                                } 
+                                else
+                                {                                                  
+                                    pr.println("This user doesn't exist!");
+                                    log.addToLog(">" + name + "< tried to change the rank of >" + tmpU3.getName() + "<, but there was no such user."); 
+                                }
                             }
                             break;
                         default:
                             //Nutzer schreibt in den Chat und das geschriebene wird protokolliert
                             chat.writeAll(name + " @ " + Time.getTime() + ": " + inputLine);
                             log.addToLog("User >" + name + "< wrote: " + inputLine);
-                        break;
+                            break;
                     }
                 }
             } 
@@ -159,7 +211,7 @@ public class Verbindung extends Thread
             u.getSocket().close();
             chat.delUser(u);
             chat.writeAll(u.getName() + " was " + message + " by " + name);
-            log.addToLog("User >" + u.getName() + "< was " + message + " by " + name);
+            log.addToLog("User >" + u.getName() + "< was " + message + " by >"+ name +"<.");
         } else {
             pr.println("Only Admins and Moderators are allowed to kick!");
             log.addToLog(">" + name + "< tried to kick >" + u.getName() + "< without permission!");
